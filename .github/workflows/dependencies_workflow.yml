@@ -14,6 +14,10 @@ jobs:
     
     permissions:
       contents: write
+    
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
     steps:
       # Step 1: Checkout the main repository
