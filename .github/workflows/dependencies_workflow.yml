@@ -1,12 +1,8 @@
 name: Build and test soccer packages
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  repository_dispatch:
+    types: [update_subtrees]  # Event type that triggers this workflow
 
 jobs:
   manage-subtree:
