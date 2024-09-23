@@ -22,7 +22,8 @@ jobs:
       # Step 1: Checkout the main repository
       - name: Checkout main repository
         uses: actions/checkout@v3
-        fetch-depth: 0
+        with:
+          fetch-depth: 0
         
       # Step 2: Add subtrees for external repositories
       - name: Add subtrees
