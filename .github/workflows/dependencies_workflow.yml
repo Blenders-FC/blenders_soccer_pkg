@@ -26,17 +26,21 @@ jobs:
           git config --local user.name "github-actions"
           git config --local user.email "actions@github.com"
 
-          # Add vision_pkg
-          git remote add -f vision_pkg https://github.com/Blenders-FC/vision_pkg
-          git subtree add --prefix=vision_pkg/ vision_pkg main --squash
+          #  Add vision_pkg
+          # git remote add -f vision_pkg https://github.com/Blenders-FC/vision_pkg
+          # git subtree add --prefix=vision_pkg/ vision_pkg main --squash
 
           # Add movement_pkg
-          git remote add -f movement_pkg https://github.com/Blenders-FC/movement_pkg
-          git subtree add --prefix=movement_pkg/ movement_pkg main --squash
+          # git remote add -f movement_pkg https://github.com/Blenders-FC/movement_pkg
+          # git subtree add --prefix=movement_pkg/ movement_pkg main --squash
 
           # Add localization_pkg
-          git remote add -f localization_pkg https://github.com/Blenders-FC/localization_pkg
-          git subtree add --prefix=localization_pkg/ localization_pkg main --squash
+          # git remote add -f localization_pkg https://github.com/Blenders-FC/localization_pkg
+          # git subtree add --prefix=localization_pkg/ localization_pkg main --squash
+
+          git subtree pull --prefix vision_pkg ttps://github.com/Blenders-FC/vision_pkg main --squash
+          git subtree pull --prefix movement_pkg ttps://github.com/Blenders-FC/movement_pkg main --squash
+          git subtree pull --prefix localization_pkg ttps://github.com/Blenders-FC/localization_pkg main --squash
 
       # Step 3: Push changes back to the main repository
       - name: Push changes to main repo
