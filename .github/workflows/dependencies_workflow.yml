@@ -38,9 +38,9 @@ jobs:
           # git remote add -f localization_pkg https://github.com/Blenders-FC/localization_pkg
           # git subtree add --prefix=localization_pkg/ localization_pkg main --squash
 
-          git subtree pull --prefix vision_pkg ttps://github.com/Blenders-FC/vision_pkg main --squash
-          git subtree pull --prefix movement_pkg ttps://github.com/Blenders-FC/movement_pkg main --squash
-          git subtree pull --prefix localization_pkg ttps://github.com/Blenders-FC/localization_pkg main --squash
+          git subtree pull --prefix vision_pkg https://github.com/Blenders-FC/vision_pkg main --squash
+          git subtree pull --prefix movement_pkg https://github.com/Blenders-FC/movement_pkg main --squash
+          git subtree pull --prefix localization_pkg https://github.com/Blenders-FC/localization_pkg main --squash
 
       # Step 3: Push changes back to the main repository
       - name: Push changes to main repo
