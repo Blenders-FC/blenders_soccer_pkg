@@ -26,7 +26,7 @@ jobs:
           git config --local user.name "github-actions"
           git config --local user.email "actions@github.com"
 
-          # Add vision_pkg
+          #  Add vision_pkg
           # git remote add -f vision_pkg https://github.com/Blenders-FC/vision_pkg
           # git subtree add --prefix=vision_pkg/ vision_pkg main --squash
 
