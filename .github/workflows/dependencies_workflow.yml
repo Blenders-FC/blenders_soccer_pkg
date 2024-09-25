@@ -1,4 +1,4 @@
-name: Build and test soccer packages
+name: Build soccer packages
 
 on:
   repository_dispatch:
@@ -17,7 +17,7 @@ jobs:
     steps:
       # Step 1: Checkout the main repository
       - name: Checkout main repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
         
