@@ -17,7 +17,7 @@ jobs:
     steps:
       # Step 1: Checkout the main repository
       - name: Checkout main repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: ${{ github.event.client_payload.sha }}
