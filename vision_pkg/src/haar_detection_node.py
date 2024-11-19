@@ -12,6 +12,7 @@ from std_msgs.msg import Float64
 
 get_distance = lambda p1, p2: math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2)
 
+
 def angleCallback(angle_msg):
     global half_boolean
     angle = angle_msg.position[1]
@@ -96,6 +97,7 @@ def _predict(value):
     tp = kalman.predict()
     return int(tp[0]), int(tp[1])
 
+
 if __name__ == "__main__":
     bridge = CvBridge()
     slope = Float64()
@@ -117,8 +119,6 @@ if __name__ == "__main__":
     pub_img = rospy.Publisher(f'robotis_{robot_id}/ImgFinal', Image, queue_size=1)
     pub_center = rospy.Publisher(f'robotis_{robot_id}/ball_center', Point, queue_size=1)
     pub_slope = rospy.Publisher(f'robotis_{robot_id}/Slope', Float64, queue_size=1)
-
-    rospy.loginfo("Hello ROS")
 
     subimg = rospy.Subscriber("/usb_cam_node/image_raw", Image, imageCallback)
     subangle_head = rospy.Subscriber(f'robotis_{robot_id}/present_joint_states', JointState, angleCallback)
