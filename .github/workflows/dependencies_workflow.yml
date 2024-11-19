@@ -12,8 +12,8 @@ jobs:
       contents: write
     
     env:
-      # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #PAT: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 
     steps:
@@ -47,5 +47,6 @@ jobs:
       # Step 6: Push changes back to the main repository
       - name: Push changes to main repo
         run: |
-          git remote set-url origin https://x-access-token:${PAT}@github.com/Blenders-FC/blenders_soccer_pkg.git
-          git push origin main
+          git add .
+          git commit -m "Update subtrees" || echo "No changes to commit"
+          git push
